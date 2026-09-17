@@ -115,7 +115,7 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin-bottom:18px}
 <div class="benefit" style="max-width:700px;margin:auto;background:#fff;color:#171717;border:1px solid #e5e5e5">
 <h2 style="margin-bottom:12px">Paiement par Wave</h2>
 <p class="details" style="line-height:1.7;color:#555">
-1. Envoyez le montant correspondant à votre commande au numéro Wave <strong>+221221703416582</strong>.<br>
+1. Envoyez le montant correspondant à votre commande au numéro Wave <strong>+221703416582</strong>.<br>
 2. Gardez la confirmation du transfert.<br>
 3. Contactez VIP SHOP pour confirmer votre commande et votre livraison.
 </p>
@@ -148,7 +148,7 @@ const products={
 function openProduct(id){
  const p=products[id]; document.getElementById("modalImg").src=p.img;
  document.getElementById("modalImg").alt=p.title; document.getElementById("modalTitle").textContent=p.title;
- document.getElementById("modalPrice").textContent=p.price; document.getElementById("modalDetails").textContent=p.details; document.getElementById("modalOrder").href="https://wa.me/221221703416582?text="+encodeURIComponent("Bonjour VIP SHOP, je souhaite commander : "+p.title+" au prix de "+p.price+".");
+ document.getElementById("modalPrice").textContent=p.price; document.getElementById("modalDetails").textContent=p.details; document.getElementById("modalOrder").href="https://wa.me/221703416582?text="+encodeURIComponent("Bonjour VIP SHOP, je souhaite commander : "+p.title+" au prix de "+p.price+".");
  document.getElementById("productModal").classList.add("open");
 }
 function closeProduct(){document.getElementById("productModal").classList.remove("open")}
