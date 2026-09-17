@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP SHOP — Votre boutique en ligne</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f8;color:#171717}
+a{text-decoration:none;color:inherit}
+.header{background:#111;color:#fff;position:sticky;top:0;z-index:10}
+.nav{max-width:1200px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:25px;font-weight:900;letter-spacing:1px}.logo span{color:#f5c542}
+.navlinks{display:flex;gap:22px;font-size:14px}.navlinks a:hover{color:#f5c542}
+.cart{background:#f5c542;color:#111;padding:10px 15px;border-radius:24px;font-weight:700}
+.hero{background:linear-gradient(135deg,#111 0%,#262626 55%,#f5c542 160%);color:#fff}
+.hero-inner{max-width:1200px;margin:auto;padding:72px 20px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.badge{display:inline-block;background:#f5c542;color:#111;padding:8px 13px;border-radius:20px;font-size:12px;font-weight:800;margin-bottom:18px}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin-bottom:18px}
+.hero p{font-size:18px;line-height:1.6;color:#ddd;max-width:620px}
+.btn{display:inline-block;margin-top:25px;background:#f5c542;color:#111;padding:14px 22px;border-radius:8px;font-weight:800}
+.hero-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:30px;text-align:center}
+.hero-card .big{font-size:75px;font-weight:900;color:#f5c542}
+.section{max-width:1200px;margin:auto;padding:55px 20px}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px;gap:20px}
+.section h2{font-size:32px}.muted{color:#666}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.cat{background:#fff;padding:18px 10px;border-radius:12px;text-align:center;border:1px solid #e8e8e8;font-weight:700}
+.cat:hover{border-color:#f5c542;transform:translateY(-2px)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product{background:#fff;border-radius:15px;overflow:hidden;border:1px solid #e9e9e9}
+.product-img{height:220px;background:#f3f3f3;display:flex;align-items:center;justify-content:center;overflow:hidden}.product-img img{width:100%;height:100%;object-fit:cover;display:block}
+.product-info{padding:17px}.product h3{font-size:17px;margin-bottom:8px}.price{font-size:20px;font-weight:900;margin:12px 0}
+.buy{display:block;text-align:center;background:#111;color:#fff;padding:11px;border-radius:7px;font-weight:700}.buy:hover{background:#f5c542;color:#111}.product-link{display:block;cursor:pointer}.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:30;padding:20px;align-items:center;justify-content:center}.modal.open{display:flex}.modal-box{background:#fff;max-width:900px;width:100%;max-height:90vh;overflow:auto;border-radius:18px;padding:22px;position:relative}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.modal-grid img{width:100%;max-height:500px;object-fit:contain;background:#f5f5f5;border-radius:12px}.close{position:absolute;right:15px;top:10px;border:0;background:#111;color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px}.modal h2{font-size:30px;margin:35px 0 12px}.modal .details{line-height:1.7;color:#555}.wa{display:inline-block;margin-top:20px;background:#111;color:#fff;padding:13px 20px;border-radius:8px;font-weight:800}@media(max-width:700px){.modal-grid{grid-template-columns:1fr}.modal-box{padding:15px}}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit{background:#111;color:#fff;padding:25px;border-radius:15px}.benefit h3{margin:10px 0}.benefit p{color:#ccc;line-height:1.5}
+.cta{background:#f5c542;border-radius:20px;padding:45px 30px;text-align:center}.cta h2{font-size:35px}.cta p{margin:10px auto;max-width:650px}
+.footer{background:#111;color:#fff;margin-top:50px}.footer-inner{max-width:1200px;margin:auto;padding:35px 20px;display:flex;justify-content:space-between;gap:30px}.footer p{color:#bbb;margin-top:8px}
+@media(max-width:850px){.hero-inner{grid-template-columns:1fr}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.benefits{grid-template-columns:1fr}.navlinks{display:none}.footer-inner{flex-direction:column}}
+@media(max-width:480px){.categories{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:1fr}.hero-inner{padding:50px 18px}.section{padding:40px 18px}}
+</style>
+</head>
+<body>
+<header class="header">
+<nav class="nav">
+<div class="logo">VIP <span>SHOP</span></div>
+<div class="navlinks"><a href="#accueil">Accueil</a><a href="#categories">Catégories</a><a href="#produits">Produits</a><a href="#contact">Contact</a></div>
+<a class="cart" href="#produits">🛒 Acheter</a>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+<div class="hero-inner">
+<div>
+<span class="badge">BIENVENUE CHEZ VIP SHOP</span>
+<h1>Tout ce dont vous avez besoin, au même endroit.</h1>
+<p>Découvrez une sélection de produits pour la maison, la beauté, la mode, l'électronique et bien plus encore. Commandez facilement depuis votre téléphone.</p>
+<a class="btn" href="#produits">Découvrir les produits →</a>
+</div>
+<div class="hero-card"><div class="big">VIP</div><p>Une boutique pensée pour vous offrir choix, simplicité et qualité.</p></div>
+</div>
+</section>
+
+<section class="section" id="categories">
+<div class="section-head"><div><h2>Nos catégories</h2><p class="muted">Trouvez rapidement ce que vous cherchez.</p></div></div>
+<div class="categories">
+<div class="cat">👗 Mode</div><div class="cat">💄 Beauté</div><div class="cat">📱 Électronique</div><div class="cat">🏠 Maison</div><div class="cat">👟 Chaussures</div><div class="cat">🎁 Divers</div>
+</div>
+</section>
+
+<section class="section" id="produits">
+<div class="section-head"><div><h2>Nos produits</h2><p class="muted">Découvrez nos produits disponibles.</p></div></div>
+
+
+<div class="products">
+<article class="product">
+  <div class="product-img product-link" onclick="openProduct('titan')"><img src="titan-gel.png" alt="Titan Gel"></div>
+  <div class="product-info">
+    <h3>Titan Gel</h3><p class="muted">Gel de massage pour le corps pour hommes.</p>
+    <div class="price">6 000 FCFA</div><a class="buy" href="https://wa.me/221703416582?text=Bonjour%20VIP%20SHOP%2C%20je%20souhaite%20commander%20le%20Titan%20Gel%20%C3%A0%206000%20FCFA." target="_blank">Commander</a>
+  </div>
+</article>
+<article class="product">
+  <div class="product-img product-link" onclick="openProduct('fan1')"><img src="mini-ventilateur-pliable.jpg" alt="Mini ventilateur pliable portable"></div>
+  <div class="product-info">
+    <h3>Mini ventilateur pliable portable</h3><p class="muted">Nouveau modèle 2026, pratique et portable.</p>
+    <div class="price">8 000 FCFA</div><a class="buy" href="https://wa.me/221703416582?text=Bonjour%20VIP%20SHOP%2C%20je%20souhaite%20commander%20le%20Mini%20ventilateur%20pliable%20portable%20%C3%A0%208000%20FCFA." target="_blank">Commander</a>
+  </div>
+</article>
+<article class="product">
+  <div class="product-img product-link" onclick="openProduct('fan2')"><img src="mini-ventilateur-usb.jpg" alt="Mini ventilateur USB rechargeable"></div>
+  <div class="product-info">
+    <h3>Mini ventilateur USB rechargeable</h3><p class="muted">Ventilateur portatif pour bureau, rechargeable.</p>
+    <div class="price">7 000 FCFA</div><a class="buy" href="https://wa.me/221703416582?text=Bonjour%20VIP%20SHOP%2C%20je%20souhaite%20commander%20le%20Mini%20ventilateur%20USB%20rechargeable%20%C3%A0%207000%20FCFA." target="_blank">Commander</a>
+  </div>
+</article>
+</div>
+
+
+</section>
+
+<section class="section">
+<div class="benefits">
+<div class="benefit"><div>🚚</div><h3>Livraison</h3><p>Organisation de la livraison selon votre zone.</p></div>
+<div class="benefit"><div>🔒</div><h3>Achat simple</h3><p>Un parcours de commande clair et adapté au mobile.</p></div>
+<div class="benefit"><div>💬</div><h3>Service client</h3><p>Contactez-nous facilement pour toute question.</p></div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="cta"><h2>Prêt à commander ?</h2><p>Choisissez votre produit puis contactez VIP SHOP pour confirmer votre commande.</p><p style="margin-top:18px;font-size:18px"><strong>Paiement Wave :</strong> 70 34 16 58 2</p><a class="btn" id="contactBtn" href="https://wa.me/221703416582" target="_blank">Commander sur WhatsApp</a></div>
+</section>
+
+<section class="section" id="paiement">
+<div class="benefit" style="max-width:700px;margin:auto;background:#fff;color:#171717;border:1px solid #e5e5e5">
+<h2 style="margin-bottom:12px">Paiement par Wave</h2>
+<p class="details" style="line-height:1.7;color:#555">
+1. Envoyez le montant correspondant à votre commande au numéro Wave <strong>70 34 16 58 2</strong>.<br>
+2. Gardez la confirmation du transfert.<br>
+3. Contactez VIP SHOP pour confirmer votre commande et votre livraison.
+</p>
+</div>
+</section>
+</main>
+
+<footer class="footer"><div class="footer-inner"><div><div class="logo">VIP <span>SHOP</span></div><p>Votre boutique en ligne.</p></div><div><strong>Contact</strong><p>WhatsApp : 70 34 16 58 2</p><p>Email : à renseigner</p></div></div></footer>
+
+<div class="modal" id="productModal" onclick="if(event.target===this)closeProduct()">
+  <div class="modal-box">
+    <button class="close" onclick="closeProduct()">×</button>
+    <div class="modal-grid">
+      <img id="modalImg" src="" alt="">
+      <div>
+        <h2 id="modalTitle"></h2>
+        <div class="price" id="modalPrice"></div>
+        <p class="details" id="modalDetails"></p>
+        <a class="wa" id="modalOrder" href="#" target="_blank" onclick="closeProduct()">Commander sur WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const products={
+  titan:{title:"Titan Gel",price:"6 000 FCFA",img:"titan-gel.png",details:"Gel de massage pour le corps destiné aux hommes. Présentation pratique en tube."},
+  fan1:{title:"Mini ventilateur pliable portable",price:"8 000 FCFA",img:"mini-ventilateur-pliable.jpg",details:"Mini ventilateur portable et pliable, nouveau modèle 2026. Pratique pour la maison, le bureau ou les déplacements."},
+  fan2:{title:"Mini ventilateur USB rechargeable",price:"7 000 FCFA",img:"mini-ventilateur-usb.jpg",details:"Ventilateur portatif USB rechargeable, conçu pour une utilisation pratique au bureau ou à la maison."}
+};
+function openProduct(id){
+ const p=products[id]; document.getElementById("modalImg").src=p.img;
+ document.getElementById("modalImg").alt=p.title; document.getElementById("modalTitle").textContent=p.title;
+ document.getElementById("modalPrice").textContent=p.price; document.getElementById("modalDetails").textContent=p.details; document.getElementById("modalOrder").href="https://wa.me/221703416582?text="+encodeURIComponent("Bonjour VIP SHOP, je souhaite commander : "+p.title+" au prix de "+p.price+".");
+ document.getElementById("productModal").classList.add("open");
+}
+function closeProduct(){document.getElementById("productModal").classList.remove("open")}
+function selectProduct(name){document.getElementById("contactBtn").textContent="Commander : "+name}
+</script>
+</body>
+</html>
